@@ -21,7 +21,6 @@ function makeCard(id, title, sub) {
   card.innerHTML = `
     <div class="card-title">${title}</div>
     <div class="card-sub">${sub}</div>
-    ${activeSeries === id ? '<div class="card-dot"></div>' : ""}
   `;
   card.addEventListener("click", () => {
     activeSeries = id;

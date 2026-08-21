@@ -159,16 +159,6 @@ body {
   margin-top: 2px;
 }
 
-.series-card .card-dot {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 12px;
-  height: 12px;
-  background: var(--teal);
-  border-radius: 2px;
-}
-
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--border);

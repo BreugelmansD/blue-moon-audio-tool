@@ -88,6 +88,30 @@ function renderTable() {
     });
     tbody.appendChild(row);
   });
+
+  attachHoverHighlight();
+}
+
+function attachHoverHighlight() {
+  const thead = document.getElementById("table-head");
+  const tbody = document.getElementById("table-body");
+  const bodyRows = Array.from(tbody.rows);
+  const headCells = Array.from(thead.rows[0]?.cells || []);
+
+  bodyRows.forEach((row) => {
+    Array.from(row.cells).forEach((cell, colIdx) => {
+      cell.addEventListener("mouseenter", () => {
+        Array.from(row.cells).forEach((c) => c.classList.add("hl"));
+        bodyRows.forEach((r) => r.cells[colIdx] && r.cells[colIdx].classList.add("hl"));
+        headCells[colIdx] && headCells[colIdx].classList.add("hl");
+      });
+      cell.addEventListener("mouseleave", () => {
+        Array.from(row.cells).forEach((c) => c.classList.remove("hl"));
+        bodyRows.forEach((r) => r.cells[colIdx] && r.cells[colIdx].classList.remove("hl"));
+        headCells[colIdx] && headCells[colIdx].classList.remove("hl");
+      });
+    });
+  });
 }
 
 function toggleSort(key) {

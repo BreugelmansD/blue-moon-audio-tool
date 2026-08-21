@@ -8,6 +8,7 @@
   --muted: #6b7278;
   --border: #e1e4e7;
   --row-alt: #fafbfc;
+  --hover-blue: #d6edf9;
 }
 
 * { box-sizing: border-box; }
@@ -206,8 +207,8 @@ thead th.sorted::after {
   content: " \25BE";
 }
 
-tbody tr:hover {
-  background: var(--row-alt);
+.hl {
+  background: var(--hover-blue) !important;
 }
 
 tbody td:first-child {

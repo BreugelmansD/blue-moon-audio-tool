@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Moon Audio Tool — Pre-alignment delays</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <header class="topbar">
+    <button class="icon-btn" id="sidebar-toggle" aria-label="Menu">&#9776;</button>
+    <div class="topbar-title">BLUE MOON AUDIO TOOL</div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">AUDIO TOOL</div>
+      <a class="sidebar-item" href="index.html">Systemen - Versterkers</a>
+      <a class="sidebar-item active" href="delays.html">Pre-alignment delays</a>
+    </aside>
+
+    <main class="content">
+      <p class="disclaimer">Niet officieel gelieerd aan of onderschreven door L-Acoustics. Alle systemen, presets en waarden op deze pagina zijn voorbeelddata ter illustratie, geen echte specificaties.</p>
+
+      <div class="cards-row" id="system-row"></div>
+
+      <div id="delay-tables"></div>
+    </main>
+  </div>
+</div>
+
+<script src="delay-data.js"></script>
+<script src="delays.js"></script>
+</body>
+</html>

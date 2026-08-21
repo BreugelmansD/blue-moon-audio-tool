@@ -16,11 +16,11 @@ const SERIES = [
 
 // Versterker-kolommen. "label" is wat er boven de kolom staat.
 const AMPS = [
-  { id: "amp4", label: "LA4X" },
-  { id: "amp8", label: "LA8" },
-  { id: "amp12", label: "LA12x" },
-  { id: "amp16", label: "LA7.17" },
-  { id: "amp16i", label: "LA1/16" },
+  { id: "amp4", label: "AMP-4" },
+  { id: "amp8", label: "AMP-8" },
+  { id: "amp12", label: "AMP-12" },
+  { id: "amp16", label: "AMP-16" },
+  { id: "amp16i", label: "AMP-16i" },
 ];
 
 // Speaker-modellen. "series" verwijst naar het id hierboven.

@@ -78,9 +78,11 @@ body {
 }
 
 .sidebar-item {
+  display: block;
   padding: 10px 18px;
   font-size: 0.9rem;
   color: var(--text);
+  text-decoration: none;
   border-left: 3px solid transparent;
 }
 
@@ -209,6 +211,82 @@ thead th.sorted::after {
 
 .hl {
   background: var(--hover-blue) !important;
+}
+
+.system-card {
+  min-width: 100px;
+  text-align: center;
+}
+
+.delay-title {
+  font-size: 1.05rem;
+  margin: 22px 0 10px;
+}
+
+.delay-rows {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.delay-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.delay-row:last-child {
+  border-bottom: none;
+}
+
+.delay-row:hover {
+  background: var(--row-alt);
+}
+
+.delay-preset {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  color: var(--text);
+  min-width: 200px;
+}
+
+.delay-values {
+  color: var(--muted);
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.delay-component {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.pol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pol-pos {
+  background: #6b7278;
+}
+
+.pol-neg {
+  background: #e53935;
 }
 
 tbody td:first-child {

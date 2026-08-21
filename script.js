@@ -138,7 +138,6 @@ document.getElementById("sidebar-toggle").addEventListener("click", () => {
   sidebar.classList.toggle("open");
 });
 document.getElementById("refresh-btn").addEventListener("click", resetFilters);
-document.getElementById("reset-btn").addEventListener("click", resetFilters);
 
 renderCards();
 renderTable();

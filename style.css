@@ -219,20 +219,3 @@ tbody td:first-child {
   color: var(--muted);
 }
 
-.bottom-action {
-  display: block;
-  width: 100%;
-  margin-top: 18px;
-  padding: 12px;
-  background: #fff;
-  border: 1px solid var(--teal);
-  color: var(--teal-dark);
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.bottom-action:hover {
-  background: rgba(22, 153, 166, 0.08);
-}
-

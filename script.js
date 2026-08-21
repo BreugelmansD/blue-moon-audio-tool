@@ -2,28 +2,33 @@ let activeSeries = "all";
 let sortKey = null;
 let sortDir = 1;
 
-function renderSeriesBar() {
-  const bar = document.getElementById("series-bar");
-  bar.innerHTML = "";
+function renderCards() {
+  const row = document.getElementById("cards-row");
+  row.innerHTML = "";
 
-  const allBtn = makeSeriesButton("all", "All");
-  bar.appendChild(allBtn);
+  const allCount = MODELS.length;
+  row.appendChild(makeCard("all", "All", `${allCount} modellen`));
 
   SERIES.forEach((s) => {
-    bar.appendChild(makeSeriesButton(s.id, s.label));
+    const count = MODELS.filter((m) => m.series === s.id).length;
+    row.appendChild(makeCard(s.id, s.label, `${count} modellen`));
   });
 }
 
-function makeSeriesButton(id, label) {
-  const btn = document.createElement("button");
-  btn.className = "series-btn" + (activeSeries === id ? " active" : "");
-  btn.textContent = label;
-  btn.addEventListener("click", () => {
+function makeCard(id, title, sub) {
+  const card = document.createElement("div");
+  card.className = "series-card" + (activeSeries === id ? " active" : "");
+  card.innerHTML = `
+    <div class="card-title">${title}</div>
+    <div class="card-sub">${sub}</div>
+    ${activeSeries === id ? '<div class="card-dot"></div>' : ""}
+  `;
+  card.addEventListener("click", () => {
     activeSeries = id;
-    renderSeriesBar();
+    renderCards();
     renderTable();
   });
-  return btn;
+  return card;
 }
 
 function getVisibleModels() {
@@ -96,5 +101,21 @@ function toggleSort(key) {
   renderTable();
 }
 
-renderSeriesBar();
+function resetFilters() {
+  activeSeries = "all";
+  sortKey = null;
+  sortDir = 1;
+  renderCards();
+  renderTable();
+}
+
+document.getElementById("sidebar-toggle").addEventListener("click", () => {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("collapsed");
+  sidebar.classList.toggle("open");
+});
+document.getElementById("refresh-btn").addEventListener("click", resetFilters);
+document.getElementById("reset-btn").addEventListener("click", resetFilters);
+
+renderCards();
 renderTable();
